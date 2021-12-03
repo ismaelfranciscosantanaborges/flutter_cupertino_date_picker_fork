@@ -199,7 +199,9 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
       pickers.add(pickerColumn);
     });
     return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween, children: pickers);
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+        children: pickers,
+        );
   }
 
   Widget _renderDatePickerColumnComponent(
@@ -211,13 +213,24 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
     return Expanded(
       flex: 1,
       child: Container(
-//         padding: EdgeInsets.all(8.0),
+        // padding: EdgeInsets.all(8.0),
         height: widget.pickerTheme.pickerHeight,
         decoration: BoxDecoration(color: widget.pickerTheme.backgroundColor),
         child: CupertinoPicker.builder(
           backgroundColor: widget.pickerTheme.backgroundColor,
           scrollController: scrollCtrl,
           itemExtent: widget.pickerTheme.itemHeight,
+          //ISMAEL
+          selectionOverlay: Container(
+            decoration: const BoxDecoration(
+              border: Border.symmetric(
+                horizontal: BorderSide(color: kColorFEC744, width: 2),
+              ),
+            ),
+          ), 
+          squeeze: 1.1,
+          diameterRatio: 10,
+          //END ISMAEL
           onSelectedItemChanged: valueChanged,
           childCount: valueRange?.last == null || valueRange?.first == null
               ? null
