@@ -224,7 +224,7 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
           selectionOverlay: Container(
             decoration: const BoxDecoration(
               border: Border.symmetric(
-                horizontal: BorderSide(color: kColorFEC744, width: 2),
+                horizontal: BorderSide(color: Color(0xffFEC744), width: 2),
               ),
             ),
           ), 
